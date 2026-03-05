@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "ms-python.python",             // Python公式サポート
+    "ms-toolsai.jupyter",           // Jupyter Notebookサポート
+    "charliermarsh.ruff",           // Ruff（高速整形・チェック）
+    "ms-python.vscode-pylance",     // コード補完の強化
+    "ms-ceintl.vscode-language-pack-ja"           // 日本語表示にする
+  ]
+}

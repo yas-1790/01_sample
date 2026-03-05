@@ -1,0 +1,29 @@
+# 1. 仮想環境の作成
+Write-Host "📦 Creating virtual environment..." -ForegroundColor Cyan
+python -m venv .venv
+
+# 2. 仮想環境をアクティベート（Windows用）
+# 実行ポリシーの一時的な変更を含めて実行
+& .\.venv\Scripts\Activate.ps1
+
+# 3. pipの更新とライブラリのインストール
+Write-Host "🚀 Installing libraries..." -ForegroundColor Cyan
+python -m pip install --upgrade pip
+if (Test-Path "requirements.txt") {
+    pip install -r requirements.txt
+}
+
+# 4. .envの準備
+if (Test-Path ".env.example") {
+    if (-not (Test-Path ".env")) {
+        Copy-Item .env.example .env
+        Write-Host "✅ Created .env from .env.example" -ForegroundColor Green
+    }
+}
+
+# 5. Jupyterのカーネル登録
+Write-Host "Kernelspec installation..." -ForegroundColor Cyan
+python -m ipykernel install --user --name=venv --display-name "Python (.venv)"
+
+Write-Host "✨ Setup Complete!" -ForegroundColor Green
+Write-Host "💡 Cursor/VS Code でこのフォルダを開き、右下のインタープリターで '.venv' を選択してください。"

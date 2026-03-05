@@ -1,0 +1,10 @@
+ruff          # コードを綺麗にする最強ツール
+python-dotenv # 設定ファイル(.env)を読み込むため
+requests      # ネットからデータを取ってくるため
+jupyter       # ノートブック本体
+ipykernel     # 仮想環境をノートブックで使うための橋渡し
+pandas        # データフレームの操作
+numpy         # 数値計算
+matplotlib    # グラフ作成
+japanize-matplotlib  # グラフの日本語表示
+openpyxl      # エクセルの操作
